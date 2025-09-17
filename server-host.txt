@@ -1,0 +1,7 @@
+#local host (python3)
+
+python3 -m http.server (port-no)
+
+# ngrok 
+
+ngrok http port-no
