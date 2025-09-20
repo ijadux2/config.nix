@@ -2,19 +2,22 @@
 
 {
 # imports 
-imports =[ <home-manager/nixos> #./module.nix ];
+imports =[ <home-manager/nixos> 
+./module.nix
+];
 
 # all the programs and one line commands !
   programs.zsh = {
       enble = true;
-
+    SellAliases = { 
+     ls = "lsd"
+     x = "clear"
+     v = "nxim"
+     lt = "ls --tree"
+      };
+ 
   OhMyZsh = {
        enable = true;
-       shellAliases = {
-          ls = "lsd"
-          cd = "z";
-          lt = "ls  --tree"
-# etc
         };
       plugins = [ "git" "zsh-history-substring-search" "starship" ];
       theme = "mh";
@@ -23,6 +26,17 @@ imports =[ <home-manager/nixos> #./module.nix ];
       enble = true;
     };
   };
+ 
+  programs.kitty = {
+      enble = true;
+      kittyconfig = ''
+      confirm-os-remove
+      font-family = "jetbrains-mono Nerd "
+      font-size = "18"
+      background-opacity = "0.95"
+      ''
+    };
+
   service.displaymanager.ly = {
       enble = true;
     };
@@ -33,10 +47,7 @@ programs.hyprland = {
   };
 
 
-xdg.portal = {
-    enble = true;
-    extraPortals = with pkgs; [ xdg-desktop-portal-hyprland ];
-  };
+xdg.portal.enble = true;
 
 gtk = {
     enble = true;
@@ -51,6 +62,8 @@ gtk = {
 
   fonts.packages = with pkgs; [
      nerd-fonts.jetbrains-mono
+     nerd-fonts.fantasque-sans-mono
+     nerd-fonts.victor-mono
   ];
 
   enviroment.systempackages = with pkgs; [
@@ -93,10 +106,7 @@ gtk = {
     curl
     git
     pciutils
-    nerd-fonts.victor-mono
-    nerd-fonts.jetbrains-mono
-    nerd-fonts.fantasque-sans-mono
-  ]
+  ];
 
 # enble home-manager 
   home-manager.users.root-ijadux2 = {
@@ -153,7 +163,7 @@ security.rtkit.enble = true;
 users.users.root-ijadux2 = {
     inNormalUsers = true;
     description = "root-ijadux2";
-    shell = "pkgs.zsh";
+    shell = pkgs.zsh;
     extraGroups = ["networkmanager" "wheel"];
 #root pkgs 
     packages = with pkgs; [
@@ -166,14 +176,10 @@ users.users.root-ijadux2 = {
     ];
   }
 #some extra settings for pkgs and users 
-nixpkgs.config.allowUnfree = {
-    enble = true;
-  };
+nixpkgs.config.allowUnfree.enble = true;
 
 # firefox enble
-programs.firefox = {
-    enble = true;
-  };
+programs.firefox.enble = true;
 
 # system version 
 systems.stateVersion = "25.05";
