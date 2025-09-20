@@ -3,7 +3,7 @@
 {
 # imports 
 imports =[
-<home-manager/nixos> 
+<home-manager/nixos>
 ./module.nix
 ./user.nix
 ./home.nix
