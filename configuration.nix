@@ -42,48 +42,6 @@ imports =[
      nerd-fonts.victor-mono
   ];
 
-  enviroment.systempackages = with pkgs; [
-    git
-    curl
-    wget
-    starship
-    oh-my-zsh
-    zsh-completions
-    zsh-powerlevel10k
-    zsh-syntax-highlighting
-    zsh-history-substring-search
-    hypridle
-    hyprlock
-    hyprpaper
-    swww
-    rofi-wayland
-    swaybg
-    wl-clipboard
-    grim
-    slurp
-    nwg-look 
-    hyprpolkitagent
-    wlogout
-    nwg-displays
-    cliphist
-    nautilus
-    ags
-    libsForQt5.qt5ct
-    catppuccin-qt5ct
-    kdePackages.qt6ct
-    wallust
-    swappy
-    btop
-    cava
-    fastfetch
-    neovim
-    bluez
-    blueman
-    curl
-    git
-    pciutils
-  ];
-
 # boot loaders 
 boot.loader.systemd-boot.enble = true;
 boot.loader.efi.canTouchEfiVariables = true;
