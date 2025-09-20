@@ -10,9 +10,9 @@
     nwg-look
     nwg-displays
     nitch  # fetch for nixos
-      
-  
-
+    networkmanager 
+    swww
+    fastfetch
 
     ];
   }
