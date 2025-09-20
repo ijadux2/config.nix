@@ -7,6 +7,5 @@
       description = "root";
       shell = pkg.zsh;
       extragroups = ["networkmanager" "wheel"];
-
     };
   }
