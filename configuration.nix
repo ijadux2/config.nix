@@ -4,6 +4,8 @@
 # imports 
 imports =[ <home-manager/nixos> 
 ./module.nix
+./user.nix
+
 ];
 
 # all the programs and one line commands !
@@ -67,11 +69,11 @@ gtk = {
   ];
 
   enviroment.systempackages = with pkgs; [
-  git
-  curl
-  wget
-  starship
-  oh-my-zsh
+    git
+    curl
+    wget
+    starship
+    oh-my-zsh
     zsh-completions
     zsh-powerlevel10k
     zsh-syntax-highlighting
