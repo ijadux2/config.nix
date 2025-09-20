@@ -2,10 +2,12 @@
 
 {
 # imports 
-imports =[ <home-manager/nixos> 
+imports =[
+<home-manager/nixos> 
 ./module.nix
 ./user.nix
-
+./home.nix
+./hyprland.nix
 ];
 
 # all the programs and one line commands !
@@ -28,36 +30,8 @@ imports =[ <home-manager/nixos>
       enble = true;
     };
   };
- 
-  programs.kitty = {
-      enble = true;
-      kittyconfig = ''
-      confirm-os-remove
-      font-family = "jetbrains-mono Nerd "
-      font-size = "18"
-      background-opacity = "0.95"
-      ''
-    };
 
-  service.displaymanager.ly = {
-      enble = true;
-    };
-
-#hyprland configs  
-programs.hyprland = {
-    enble = true;
-  };
-
-
-xdg.portal.enble = true;
-
-gtk = {
-    enble = true;
-    theme = {
-        name = "catppuccin-mocha";
-        package = pkgs.catppuccin-gtk;
-      };
-  };
+  service.displaymanager.ly.enable = true;
   #experimental flakes 
    nix.settings.experimental-features = ["nix-command" "flakes"];
   # all the pkgs and dependences !
@@ -110,34 +84,6 @@ gtk = {
     pciutils
   ];
 
-# enble home-manager 
-  home-manager.users.root-ijadux2 = {
-      home.homeDirectory = "/home/root-ijadux2"
-      home.NixpkgsReleaseCheck = {
-          enble = false;
-        };
-       home.stateVersion = "25.05";
-       nixpkgs.configs = {
-          allowUnfree = true;
-        };
-  };
-      home.packages = with pkgs; [
-      sl
-      cmatrix
-      kitty
-      ghostty
-      ];
-
-      home.sessionsVariable = {
-          EDITOR = "nvim";
-        };
-
-        programs.home-manager = {
-            enble = true;
-          };
-
-
-
 # boot loaders 
 boot.loader.systemd-boot.enble = true;
 boot.loader.efi.canTouchEfiVariables = true;
@@ -160,23 +106,6 @@ service.pipewire.enble = {
     thisjack.enble = true; 
   }
 security.rtkit.enble = true;
-
-#users and root-configurations
-users.users.root-ijadux2 = {
-    inNormalUsers = true;
-    description = "root-ijadux2";
-    shell = pkgs.zsh;
-    extraGroups = ["networkmanager" "wheel"];
-#root pkgs 
-    packages = with pkgs; [
-    zsh
-    zoxide
-    ly
-    vscodium
-    hyprland
-    waybar
-    ];
-  }
 #some extra settings for pkgs and users 
 nixpkgs.config.allowUnfree.enble = true;
 
