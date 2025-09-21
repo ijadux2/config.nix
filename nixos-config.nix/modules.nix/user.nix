@@ -8,4 +8,6 @@
       shell = pkg.zsh;
       extragroups = ["networkmanager" "wheel"];
     };
+
+    nix.settings.experiment-features = ["nix-commands" "flakes"];
   }
