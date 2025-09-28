@@ -50,7 +50,7 @@
     glib # for gsettings to work
     gsettings-qt
     git
-    google-chrome
+    chromium
     gnome-system-monitor
     fastfetch
     jq
@@ -119,7 +119,7 @@
     ipfetch
     lolcat
     lsd
-    oh-my-posh
+    ohmyzsh
     pfetch
     ncdu
     ncftp
@@ -148,19 +148,15 @@
     luarocks
     nh
 
-    # Internet
-    discord
-
-    # Virtuaizaiton
-    virt-viewer
-    libvirt
+    #internet
+     vesktop
 
     # Video
     vlc
 
     # Terminals
     kitty
-    wezterm
+    ghostty
 
     ];
   }
