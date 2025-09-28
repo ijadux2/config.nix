@@ -18,7 +18,7 @@
           confirm-os-remove;
           font-family = "JetBrains Mono Nerd";
           font-size = "18";
-          background-opacity = "0.95";
+          background-opacity = "1";
           ''
         };
      
