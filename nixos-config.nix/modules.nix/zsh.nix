@@ -7,13 +7,12 @@
           ls = "lsd";
           x = "clear";
           lt = "ls --tree";
+          cd = "z";
         };
         progarms.OhMyZsh = {
             enable = true;
-            plugins = [ "git"];
+            plugins = [ "git" "zoxide" "starship" ];
             theme = "mh";
           };
-        progarms.zoxide.enable = true;
-        progarms.starship.enable = true;
       };
   }
