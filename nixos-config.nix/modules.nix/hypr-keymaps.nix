@@ -9,9 +9,10 @@
 
       # Startup applications
       exec-once = waybar
+      exec-once = hyprcursor 
       exec-once = swaync
       exec-once = swayidle -w
-      exec-once = dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY HYPRLAND_INSTANCE_SIGNATURE
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY HYPRLAND_INSTANCE_SIGNATURE
       exec-once = systemctl --user import-environment DISPLAY WAYLAND_DISPLAY HYPRLAND_INSTANCE_SIGNATURE
       exec-once = /usr/libexec/polkit-gnome-authentication-agent-1
       exec-once = wlsunset -t 4500 -T 6500
@@ -27,8 +28,8 @@
       };
 
        general {
-        gaps_in = 5
-        gaps_out = 10
+        gaps_in = 2
+        gaps_out = 5
         border_size = 2
         col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
         col.inactive_border = rgba(595959aa)
@@ -42,7 +43,7 @@
       bind = [
         "$mod, F, exec, firefox"
         "$mod, RETURN, exec, kitty"
-        "$mod, B, exec, brave"
+        "$mod, B, exec, chromium"
         "$mod, E, exec, nautilus"
         "$mod, D, exec, rofi -show drun --show icons"
         "$mod, C, exec, codium"
