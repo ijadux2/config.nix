@@ -9,7 +9,8 @@
   };
       home.packages = with pkgs; [
       cmatrix
-      kitty
+      npm
+      rust 
       ];
 
       home.sessionVariable = {
